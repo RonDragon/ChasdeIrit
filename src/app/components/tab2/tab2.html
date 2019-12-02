@@ -1,0 +1,21 @@
+<header>
+  <span>
+    <title>
+      כניסה למתנדב
+    </title>
+  </span>
+
+</header>
+ <!-- Icon -->
+ <div class="fadeIn first">
+  <img
+    src="https://img.freepik.com/free-vector/dragon-vector-icon-illustratmascot_1893-592.jpg?size=338&ext=jpg"
+    style="width: 100px" />
+</div>
+ <!-- Login Form -->
+<form>
+<input type="text"  class="fadeIn second" placeholder="מספר טלפון" [(ngModel)]="user.userName"  [ngModelOptions]='{standalone : true}' required>
+<button expand="full" type="button" class="fadeIn fourth" value="Log In" (click)="login()">כניסה</button>
+</form>
+<span>
+</span>

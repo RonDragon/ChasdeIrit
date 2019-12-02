@@ -1,0 +1,90 @@
+<header>
+    <span>
+      <title> ניהול משפחות </title>
+    </span>
+  </header>
+  
+  <span>
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col"> שם המשפחה </th>
+          <th scope="col"> כתובת </th>
+          <th scope="col">מספר טלפון </th>
+          <th scope="col">  סטטוס משפחה</th>
+          <th scope="col"><button type="button" class="btn btn-outline-info" (click)='createFlagC()'>יצירת משפחה
+              חדשה</button> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of familys">
+          <th>{{v.id}}</th>
+          <td>{{v.familyName}}</td>
+          <td>{{v.currentAddres}}</td>
+          <td>{{v.famPhoneNum}}</td>         
+          <td>{{v.familyStatus}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-info" (click)='updateFlagC(v)'>עריכה</button>
+            <button type="button" class="btn btn-outline-info">פרטים נוספים</button>
+          </td>
+  
+        </tr>
+  
+      </tbody>
+  
+    </table>
+    <form *ngIf='updateFlag'>
+        <span>שם המשפחה:</span>
+        <input type="text" class="form-control " placeholder="family Name" required
+          [(ngModel)]="family.familyName" familyName="ngModel" name="Name" required>
+        <span>מספר פלאפון:</span>
+        <input type="text" class="form-control " placeholder="Phone Number" required
+          [(ngModel)]="family.famPhoneNum" famPhoneNum="ngModel" name="message" required>
+        <span>כתובת מדוייקת:</span>
+        <input type="text" class="form-control " placeholder="current Address" required
+          [(ngModel)]="family.currentAddres" currentAddres="ngModel" name="current Address" required>
+          <span>סטטוס משפחה:</span>
+          <select class="form-control " required [(ngModel)]="family.familyStatus" familyStatus="ngModel" name="type" required>
+              <option value="WAITINGFORCHECK">ממתין לבדיקה</option>
+              <option value="WAITINGFORORDER">ממתין לציוות למתנדב</option>
+              <option value="DELIVERY">בסבב חלוקה</option>
+              <option value="NONEED">לא נצרך משלוח</option>
+              <option value="STOPDELIVERING">הופסק משלוח</option>
+            </select>
+            
+      <button class="btn btn-info" (click)='updateFamily()'>Submit</button>
+    </form>
+  
+    <form createfamilyForm="ngForm" class="was-validated text-center border border-light p-5" *ngIf='createFlag'>
+   
+          <span>שם המשפחה:</span>
+          <input type="text" class="form-control " placeholder="family Name" required
+            [(ngModel)]="family.familyName" familyName="ngModel" name="Name" required>
+          <span>מספר פלאפון:</span>
+          <input type="text" class="form-control " placeholder="Phone Number" required
+            [(ngModel)]="family.famPhoneNum" famPhoneNum="ngModel" name="message" required>
+          <span>כתובת מדוייקת:</span>
+          <input type="text" class="form-control " placeholder="current Address" required
+            [(ngModel)]="family.currentAddres" currentAddres="ngModel" name="current Address" required>
+          <span>סטטוס משפחה:</span>
+            <select class="form-control " required [(ngModel)]="family.familyStatus" familyStatus="ngModel" name="type" required>
+                <option value="WAITINGFORCHECK">ממתין לבדיקה</option>
+                <option value="WAITINGFORORDER">ממתין לציוות למתנדב</option>
+                <option value="DELIVERY">בסבב חלוקה</option>
+                <option value="NONEED">לא נצרך משלוח</option>
+                <option value="STOPDELIVERING">הופסק משלוח</option>
+              </select>
+  
+        <button class=" btn btn-info" (click)="createFamily()"> Create family</button>
+      
+    </form>
+
+  
+
+ 
+
+  </span>
+  
+ 
+

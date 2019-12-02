@@ -1,0 +1,19 @@
+<header>
+  <span>
+    <title>
+      כניסה למנהל העמותה
+    </title>
+  </span>
+</header>
+<!-- Icon -->
+<div class="fadeIn first">
+  <img
+    src="https://img.freepik.com/free-vector/dragon-vector-icon-illustratmascot_1893-592.jpg?size=338&ext=jpg"
+    style="width: 100px" />
+</div>
+<form>
+<input  type="text"  class="fadeIn second" placeholder="Email" [(ngModel)]="user.userName"  [ngModelOptions]='{standalone : true}' required>
+<input type="text"  class="fadeIn third"  placeholder="password" [(ngModel)]="user.password"  [ngModelOptions]='{standalone : true}' required>
+<button expand="full" (click)="login()"  class="fadeIn fourth">כניסה</button>
+</form>
+<span></span>

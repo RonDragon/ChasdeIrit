@@ -1,0 +1,39 @@
+<header>
+    <span>
+      <title>    מסך חלוקה </title>
+    </span>
+  </header>
+  
+  <span>
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <!-- <th scope="col">  מתנדב </th> -->
+          <th scope="col">שם המשפחה </th>        
+          <th scope="col">הערות מתנדב </th>
+          <!-- <th scope="col">הערות מנהל</th> -->
+          <th scope="col">  סטטוס חלוקה</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of familys">
+            <th>{{f.familyName }}</th>
+            <th>{{f.volunteerNote }}</th>
+          <th>{{f.deliveryStatus }}</th>
+        
+          <!-- <th>{{f | json }}</th> -->
+          <!-- <td>{{f.volunteerName}</td>
+          <td>{{f.family.familyName}}</td>
+          <td>{{f.family.volunteerNote}}</td>
+          <td>{{f.family.managerNote}}</td>
+          <td>{{f.family.deliveryStatus}}</td> -->
+       
+  
+        </tr>
+  
+      </tbody>
+  
+    </table>
+ 
+  </span>

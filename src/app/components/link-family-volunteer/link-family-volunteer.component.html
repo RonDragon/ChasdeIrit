@@ -1,0 +1,58 @@
+<header>
+  <span>
+    <title> ציוות משפחה למתנדב </title>
+  </span>
+</header>
+
+<span>
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">שם מתנדב </th>
+        <th scope="col"> מספר טלפון </th>
+        <th scope="col">מספר ארגזים </th>
+        <th scope="col"> אזור חלוקה</th>
+        <th scope="col">שותף</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of volunteers">
+        <th>{{v.volunteerId}}</th>
+        <td>{{v.volunteerName}}</td>
+        <td>{{v.volunteerPhoneNumber}}</td>
+        <td>{{v.numberOfBox}}</td>
+        <td>{{v.areaDelivery}}</td>
+        <td>{{v.partner}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-info" (click)='updateFlagC(v.volunteerId)'>עריכה</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <form *ngIf='updateFlag'>
+<div >
+
+    <mat-select  class="form-control"   (selectionChange)="onSelect($event)" >
+
+      <mat-option  *ngFor="let f of familys" [value]="f" >{{f.familyName}} </mat-option>
+
+    </mat-select>
+
+
+
+    <button class="btn btn-info" (click)='updateVolunteer()'>עדכון</button>
+  </div>
+  </form>
+
+
+
+
+
+
+</span>

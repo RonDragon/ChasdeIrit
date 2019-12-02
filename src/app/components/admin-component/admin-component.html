@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+<mat-card>
+ 
+  {{title.volunteerManage}}
+  <a routerLink="volunteerManage">
+    <button mat-mini-fab>
+        <mat-icon>home</mat-icon>
+     
+    </button>
+  </a>
+
+
+
+  {{title.familyManage}}
+  <a routerLink="familyManage">
+    <button mat-mini-fab>
+        <mat-icon>perm_identity</mat-icon>
+    </button>
+  </a>
+
+
+
+
+  {{title.linkFamilyToVolunteer}}
+  <a routerLink="linkFamilyToVolunteer">
+    <button mat-mini-fab>
+        <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+  </a>
+
+  {{title.deliveryStatusView}}
+  <a routerLink="deliveryStatusView">
+    <button mat-mini-fab>
+        <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+  </a>
+</mat-card>

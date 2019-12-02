@@ -1,0 +1,83 @@
+<header>
+  <span>
+    <title> ניהול מתנדבים </title>
+  </span>
+</header>
+
+<span  >
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">שם מתנדב </th>
+        <th scope="col"> מספר טלפון </th>
+        <th scope="col">מספר ארגזים </th>
+        <th scope="col"> אזור חלוקה</th>
+        <th scope="col">שותף</th>
+        <th scope="col"><button type="button" class="btn btn-outline-info" (click)='createFlagC()'>יצירת מתנדב
+            חדש</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of volunteers">
+        <th>{{v.id}}</th>
+        <td>{{v.volunteerName}}</td>
+        <td>{{v.volunteerPhoneNumber}}</td>
+        <td>{{v.numberOfBox}}</td>
+        <td>{{v.areaDelivery}}</td>
+        <td>{{v.partner}}</td>
+        <td>
+          <button type="button" class="btn btn-outline-info" (click)='updateFlagC(v)'>עריכה</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <form *ngIf='updateFlag' >
+      <span>שם המתנדב:</span>
+      <input type="text" class="form-control " placeholder="Volunteer Name" 
+        [(ngModel)]="volunteer.volunteerName" volunteerName="ngModel" name="Name" required>
+      <span>מספר פלאפון:</span>
+      <input type="text" class="form-control " placeholder="Phone Number" 
+        [(ngModel)]="volunteer.volunteerPhoneNumber" volunteerPhoneNumber="ngModel" name="message" required>
+      <span>מספר חבילות</span>
+      <input type="number" class="form-control " placeholder="Number Of Boxes" 
+        [(ngModel)]="volunteer.numberOfBox" numberOfBox="ngModel" name="Number Of Boxes" required>
+      <span>אזור חלוקה</span>
+      <input type="text" class="form-control " placeholder="Area Delivery" 
+        [(ngModel)]="volunteer.areaDelivery" areaDelivery="ngModel" name="areaDelivery" required>
+
+          <span>שותף</span>
+          <select  class="form-control"  required>
+
+            <option value="v" *ngFor="let v of volunteers">{{v.volunteerName}}  </option>
+      
+          </select>
+      
+    <button class="btn btn-info" (click)='updateVolunteer()'>עדכון</button>
+  </form>
+
+  <form createVolunteerForm="ngForm" class="was-validated text-center border border-light p-5" *ngIf='createFlag'>
+        <span>שם המתנדב:</span>
+      <input type="text" class="form-control " placeholder="Volunteer Name" required
+        [(ngModel)]="volunteerCreate.volunteerName" volunteerName="ngModel" name="Name" required>
+        <span>מספר פלאפון:</span>
+      <input type="text" class="form-control " placeholder="Phone Number" required
+        [(ngModel)]="volunteerCreate.volunteerPhoneNumber" volunteerPhoneNumber="ngModel" name="message" required>
+        <span>מספר חבילות</span>
+      <input type="number" class="form-control " placeholder="Number Of Boxes" required
+        [(ngModel)]="volunteerCreate.numberOfBox" numberOfBox="ngModel" name="Number Of Boxes" required>
+        <span>אזור חלוקה</span>
+      <input type="text" class="form-control " placeholder="Area Delivery" required
+        [(ngModel)]="volunteerCreate.areaDelivery" areaDelivery="ngModel" name="areaDelivery" required>
+
+      <button class=" btn btn-info" (click)="createVolunteer()"> יצירת מתנדב</button>
+  </form>
+
+
+
+
+</span>

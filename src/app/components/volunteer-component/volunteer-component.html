@@ -1,0 +1,36 @@
+ <header>
+  <span>
+    <title>דף מתנדב</title>
+  </span>
+</header>
+
+<table class="table table-sm table-hover">
+    <thead>
+    <tr>
+      <th scope="col">שם המשפחה</th>
+      <th scope="col">כתובת</th>
+      <th scope="col">קישור לתוכנת ניווט</th>
+      <th scope="col">מספר פלאפון</th>
+      <th scope="col">הערות מנהל</th>
+      <th scope="col">הערות מתנדב</th>
+      <th scope="col">  בוצע</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let f of familys">
+      <td>{{f.familyName}}</td>
+      <td>{{f.currentAddres}}</td>
+      <td>{{f.urlAddres}}</td>
+      <td>{{f.famPhoneNum}}</td>
+      <td>{{f.managerNote}}</td>
+      <td>
+        <input  [(ngModel)]="vNote" value='{{f.volunteerNote}}' placeholder="הערות" >
+      </td>
+      <td>
+      <button  type="button" class="btn btn-outline-info" (click)='setDeliveryStatusAndNotes(f)'> בוצע  </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span>
+</span>
